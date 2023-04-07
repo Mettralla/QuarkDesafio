@@ -1,4 +1,8 @@
-﻿  Cotizacion.cpp
+﻿  Camisa.cpp
+  Cotizacion.cpp
   main.cpp
+  Prenda.cpp
+  Tienda.cpp
+  Vendedor.cpp
   Generando código...
   QuarkDesafio.vcxproj -> C:\Users\Usuario\source\repos\QuarkDesafio\x64\Debug\QuarkDesafio.exe

@@ -30,6 +30,18 @@
     <ClCompile Include="Cotizacion.cpp">
       <Filter>Domain</Filter>
     </ClCompile>
+    <ClCompile Include="Tienda.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Prenda.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Camisa.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Pantalon.cpp">
+      <Filter>Domain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vendedor.h">
@@ -37,6 +49,18 @@
     </ClInclude>
     <ClInclude Include="Cotizacion.h">
       <Filter>Domain\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Tienda.h">
+      <Filter>Domain\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Prenda.h">
+      <Filter>Domain\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Camisa.h">
+      <Filter>Domain\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pantalon.h">
+      <Filter>App</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
