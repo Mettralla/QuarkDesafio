@@ -1,8 +1,7 @@
 #include "View.h"
 
 View::View() {
-	/*this->tienda = presenter->tienda;
-	this->vendedor = presenter->vendedor;*/
+	
 }
 
 View::~View() {
@@ -29,7 +28,7 @@ void View::menuPrincipal()
 			eleccion = 0;
 			break;
 		case 3:
-			exit(0);
+			break;
 		}
 	}
 }
