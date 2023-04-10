@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Vendedor.h"
-#include "Cotizacion.h"
+#include "View.h"
 
 using namespace std;
 
 int main() {
-
+    View vw;
+    vw.menuPrincipal();
     return 0;
 }

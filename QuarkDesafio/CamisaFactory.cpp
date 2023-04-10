@@ -1,0 +1,1 @@
+#include "CamisaFactory.h"

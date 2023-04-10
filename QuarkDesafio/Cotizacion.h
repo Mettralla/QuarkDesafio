@@ -1,34 +1,28 @@
 #pragma once
 #include <string>
-//#include <ctime>
-//#include <iomanip>
+#include <iostream>
 #include <chrono>
+#include "Prenda.h"
 
 using namespace std;
 
-/*  Esta clase representa una cotizacion.
-    params:
-    [int] id: numero de identificacion de la cotizacion.
-    [str] fechaHora: timestamp de la cotizacion se genera de forma automatica al crear.
-    [str] codigo de vendedor: el codigo de identificacion del vendedor.
-    [str] prenda: prenda a cotizar.
-    [int] unidades: cantidad de unidades cotizadas.
-    [double] totalCotizacion: resultado del calculo de la cotizacion.*/
+/*  Esta clase representa una cotizacion. */
 class Cotizacion {
 private:
-    int id;
-    string fechaHora;
-    string codigoVendedor;
-    string prenda;
-    int unidades;
-    double totalCotizacion;
+    int id; // numero de identificacion 
+    string fechaHora;  // timestamp de la cotizacion
+    string codigoVendedor; // codigo de identificacion del vendedor
+    Prenda* prenda; // prenda a cotizar
+    int unidades; // cantidad de unidades cotizadas
+    double totalCotizacion; // resultado de la cotizacion
+    static int contador; // contador de cotizaciones
 public:
-    Cotizacion(int id, string codigoVendedor, string prenda, int unidades, double totalCotizacion);
+    Cotizacion(string codigoVendedor, Prenda* prenda, int unidades);
 
     // GETTERS & SETTERS
 
     // Asigna o cambia el id de la cotizacion.
-    void setId(int nuevoId);
+    void setId();
 
     // Regresa el id de la cotizacion.
     int getId();
@@ -46,10 +40,10 @@ public:
     string getCodigoVendedor();
 
     // Asigna o cambia la prenda a cotizar. 
-    void setPrenda(string nuevaPrenda);
+    void setPrenda(Prenda* nuevaPrenda);
 
     // Regresa la prenda a cotizar.
-    string getPrenda();
+    Prenda* getPrenda();
 
     // Asigna o cambia la cantidad de unidades a cotizar. 
     void setUnidades(int nuevasUnidades);
@@ -58,9 +52,19 @@ public:
     int getUnidades();
 
     // Asigna o cambia el total. 
-    void setTotalCotizacion(double nuevoTotal);
+    void setTotalCotizacion(double precioUnitario, int unidades);
 
     // Regresa el total.
     double getTotalCotizacion();
+
+    // PRENDA
+     
+    // Regresa las caracteristicas de la prenda en formato Nombre - Tipo - Calidad
+    string getCaracteristicas();
+
+    // COTIZACION
+
+    // Imprime la cotizacion por consola
+    void imprimirCotizacion();
 };
 

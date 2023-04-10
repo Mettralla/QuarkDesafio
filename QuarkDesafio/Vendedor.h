@@ -5,20 +5,18 @@
 
 using namespace std;
 
-/*  Esta clase representa a un vendedor.
-    params:
-    [str] nombre: el nombre del vendedor.
-    [str] apellido: el apellido del vendedor.
-    [str] codigo de vendedor: el codigo de identificacion del vendedor. */
+/*  Esta clase representa a un vendedor. */
 class Vendedor
 {
 private:
-    string nombre;
-    string apellido;
-    string codigoVendedor;
-    list<Cotizacion*> historial;
+    string nombre; // Nombre del vendendor
+    string apellido; // Apellido del vendedor
+    string codigoVendedor; // Codigo de identificacion del vendedor
+    list<Cotizacion*> historial; // Lista de Cotizaciones
 public:
     Vendedor(string nombre, string apellido, string codigoVendedor);
+
+    ~Vendedor();
 
     // GETTERS & SETTERS
 
@@ -27,6 +25,9 @@ public:
 
     // Regresa el nombre del vendedor.
     string getNombre();
+
+    // Regresa el nombre completo del vendedor.
+    string getNombreCompleto();
 
     // Asigna o cambia el apellido del vendedor.
     void setApellido(string nuevoApellido);
@@ -48,5 +49,7 @@ public:
      // Regresa el historial de cotizaciones del vendedor.
      list<Cotizacion*> getHistorial();
 
+     // Imprime las cotizaciones del historial en la consola
+     void imprimirHistorial();
 };
 

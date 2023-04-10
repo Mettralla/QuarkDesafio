@@ -1,18 +1,19 @@
 #include "Cotizacion.h"
+int Cotizacion::contador = 0;
 
-Cotizacion::Cotizacion(int id, string codigoVendedor, string prenda, int unidades, double totalCotizacion)
+Cotizacion::Cotizacion(string codigoVendedor, Prenda* prenda, int unidades)
 {
-    setId(id);
+    setId();
     setFechaHora();
-    setCodigoVendedor(codigoVendedor);
-    setPrenda(prenda);
-    setUnidades(unidades);
-    setTotalCotizacion(totalCotizacion);
+    this->codigoVendedor = codigoVendedor;
+    this->prenda = prenda;
+    this->unidades = unidades;
+    setTotalCotizacion(prenda->getPrecioUnitario(), unidades);
 };
 
-void Cotizacion::setId(int nuevoId)
+void Cotizacion::setId()
 {
-    this->id = nuevoId;
+    this->id = ++contador;
 };
 
 int Cotizacion::getId()
@@ -51,12 +52,12 @@ string Cotizacion::getCodigoVendedor()
     return this->codigoVendedor;
 };
 
-void Cotizacion::setPrenda(string nuevaPrenda)
+void Cotizacion::setPrenda(Prenda* nuevaPrenda)
 {
     this->prenda = nuevaPrenda;
 };
 
-string Cotizacion::getPrenda()
+Prenda* Cotizacion::getPrenda()
 {
     return this->prenda;
 };
@@ -71,12 +72,40 @@ int Cotizacion::getUnidades()
     return this->unidades;
 };
 
-void Cotizacion::setTotalCotizacion(double nuevoTotal)
+void Cotizacion::setTotalCotizacion(double precioUnitario, int unidades)
 {
-    this->totalCotizacion = nuevoTotal;
+    double precioProcesado = precioUnitario;
+    if (this->prenda->getNombre() == "Camisa")
+    {
+        precioProcesado = this->prenda->getManga() == "Manga Corta" ? precioProcesado - precioProcesado * 0.1 : precioProcesado;
+        precioProcesado = this->prenda->getCuello() == "Cuello Mao" ? precioProcesado + precioProcesado * 0.03 : precioProcesado;
+    }
+    else
+    {
+        precioProcesado = this->prenda->getTipo() == "Chupin" ? precioProcesado - precioProcesado * 0.12 : precioProcesado;
+    }
+    precioProcesado = this->prenda->getCalidad() == "Premium" ? precioProcesado + precioProcesado * 0.3 : precioProcesado;
+    this->totalCotizacion = precioProcesado * unidades;
 }
 
 double Cotizacion::getTotalCotizacion()
 {
     return this->totalCotizacion;
+};
+
+string Cotizacion::getCaracteristicas()
+{
+    string tipo = this->prenda->getNombre() == "Camisa" ? this->prenda->getManga() + " - " + this->prenda->getCuello() : this->prenda->getTipo();
+    return this->prenda->getNombre() + " - " + tipo + " - " + this->prenda->getCalidad();
+};
+
+void Cotizacion::imprimirCotizacion()
+{
+    cout << " Numero de identificacion: " << getId() << endl;
+    cout << " Fecha y Hora de la cotizacion: " << getFechaHora() << endl;
+    cout << " Codigo del Vendedor: " << getCodigoVendedor() << endl;
+    cout << " Prenda Cotizada: " << getCaracteristicas() << endl;
+    cout << " Precio unitario: " << getPrenda()->getPrecioUnitario() << endl;
+    cout << " Cantidad de unidades cotizadas: " << getPrenda()->getUnidades() << endl;
+    cout << " Precio Final: " << getTotalCotizacion() << endl;
 };

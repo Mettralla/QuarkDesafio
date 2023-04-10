@@ -2,8 +2,8 @@
 
 Tienda::Tienda(string nombre, string direccion)
 {
-	setNombre(nombre);
-	setDireccion(direccion);
+	this->nombre = nombre;
+	this->direccion = direccion;
 };
 
 void Tienda::setNombre(string nuevoNombre)
@@ -24,4 +24,9 @@ void Tienda::setDireccion(string nuevaDireccion)
 string Tienda::getDireccion()
 {
 	return this->direccion;
+}
+
+int Tienda::getStock(int row, int col)
+{
+	return stock[row][col];
 }

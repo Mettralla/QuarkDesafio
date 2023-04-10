@@ -1,8 +1,13 @@
 #include "Camisa.h"
 
-Camisa::Camisa()
+Camisa::Camisa(string manga, string cuello, string calidad, double precioUnitario, int unidades)
 {
-
+	setNombre("Camisa");
+	this->manga = manga;
+	this->cuello = cuello;
+	this->calidad = calidad;
+	this->precioUnitario = precioUnitario;
+	this->unidades = unidades;
 }
 
 Camisa::~Camisa()

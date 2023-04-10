@@ -42,6 +42,12 @@
     <ClCompile Include="Pantalon.cpp">
       <Filter>Domain</Filter>
     </ClCompile>
+    <ClCompile Include="Presenter.cpp">
+      <Filter>Presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vendedor.h">
@@ -60,7 +66,13 @@
       <Filter>Domain\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Pantalon.h">
-      <Filter>App</Filter>
+      <Filter>Domain\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Presenter.h">
+      <Filter>Presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>View</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

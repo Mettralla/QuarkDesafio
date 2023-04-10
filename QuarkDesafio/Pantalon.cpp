@@ -1,8 +1,12 @@
 #include "Pantalon.h"
 
-Pantalon::Pantalon()
+Pantalon::Pantalon(string tipo, string calidad, double precioUnitario, int unidades)
 {
-
+	setNombre("Pantalon");
+	this->tipo = tipo;
+	this->calidad = calidad;
+	this->precioUnitario = precioUnitario;
+	this->unidades = unidades;
 };
 
 Pantalon::~Pantalon()
