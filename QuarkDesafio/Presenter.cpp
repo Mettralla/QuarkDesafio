@@ -20,8 +20,21 @@ int Presenter::getEleccion()
 	int eleccion = 0;
 	while (eleccion == 0)
 	{
-		cout << "Ingresar su eleccion: "; 
-		cin >> eleccion;
+		while (true)
+		{
+			cout << "Ingresar su eleccion: "; 
+			cin >> eleccion;
+			if (!cin)
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Valor invalido, por favor intente otra vez" << endl;
+				cout << "Enter para continuar --->" << endl;
+				_getch();
+				continue;
+			}
+			else break;
+		}
 		if (eleccion > 0 && eleccion <= 3)
 		{
 			break;

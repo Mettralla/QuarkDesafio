@@ -54,8 +54,21 @@ void View::verHistorial()
 	subMenuFooter();
 	while (eleccion != 3)
 	{
-		cout << "Ingresar 3 para volver: ";
-		cin >> eleccion;
+		while (true)
+		{
+			cout << "Ingresar 3 para volver: ";
+			cin >> eleccion;
+			if (!cin)
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Valor invalido, por favor intente otra vez" << endl;
+				cout << "Enter para continuar --->" << endl;
+				_getch();
+				continue;
+			}
+			else break;
+		}
 	}
 }
 
@@ -91,7 +104,21 @@ void View::realizarCotizacion()
 
 	// Precio Unitario
 	cotizarPsCuatro();
-	cin >> precioUnitario;
+	while (true)
+	{
+		cout << "Ingresar precio: ";
+		cin >> precioUnitario;
+		if (!cin)
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Valor invalido, por favor intente otra vez" << endl;
+			cout << "Enter para continuar --->" << endl;
+			_getch();
+			continue;
+		}
+		else break;
+	}
 	if (precioUnitario == 3)
 	{
 		menuPrincipal();
@@ -103,7 +130,21 @@ void View::realizarCotizacion()
 	while (true)
 	{
 		cotizarPsCinco(stock);
-		cin >> cantCotizar;
+		while (true)
+		{
+			cout << "Ingresar cantidad de unidades: ";
+			cin >> cantCotizar;
+			if (!cin)
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Valor invalido, por favor intente otra vez" << endl;
+				cout << "Enter para continuar --->" << endl;
+				_getch();
+				continue;
+			}
+			else break;
+		}
 		if (cantCotizar == 3)
 		{
 			menuPrincipal();
@@ -184,7 +225,6 @@ void View::cotizarPsCuatro()
 	system("cls");
 	subMenuCotizarHeader();
 	subMenuCotizarPasoCuatro();
-	cout << "Ingresar precio: ";
 }
 
 void View::cotizarPsCinco(int stock)
@@ -192,7 +232,6 @@ void View::cotizarPsCinco(int stock)
 	system("cls");
 	subMenuCotizarHeader();
 	subMenuCotizarPasoCinco(stock);
-	cout << "Ingresar cantidad de unidades: ";
 }
 
 void View::resultadoCotizacion()
@@ -204,8 +243,21 @@ void View::resultadoCotizacion()
 	subMenuFooter();
 	while (eleccion != 3)
 	{
-		cout << "Ingresar 3 para volver: ";
-		cin >> eleccion;
+		while (true)
+		{
+			cout << "Ingresar 3 para volver: ";
+			cin >> eleccion;
+			if (!cin)
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Valor invalido, por favor intente otra vez" << endl;
+				cout << "Enter para continuar --->" << endl;
+				_getch();
+				continue;
+			}
+			else break;
+		}
 	}
 }
 

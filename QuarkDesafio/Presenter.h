@@ -4,6 +4,7 @@
 #include "Camisa.h"
 #include "Pantalon.h"
 #include <iostream>
+#include <conio.h>
 
 /*  Esta clase es el presentador. */
 class Presenter {
